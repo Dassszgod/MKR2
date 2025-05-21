@@ -11,10 +11,13 @@
           <p class="card-text"><strong>Ingredients:</strong> {{ recipe.ingredients }}</p>
           <p class="card-text"><strong>Instructions:</strong> {{ recipe.instructions }}</p>
           <p class="card-text"><small class="text-muted">Created at: {{ recipe.created_at }}</small></p>
+            <a href="{% url 'category_detail' recipe.category.id %}" class="btn btn-primary mt-2">
+            Details
+          </a>
         </div>
       </div>
     {% empty %}
       <p>No recipes found.</p>
-    {% endfor %}
+    {% endfor %}    
   </div>
 {% endblock %}
